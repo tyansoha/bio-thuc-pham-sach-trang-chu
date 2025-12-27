@@ -1,183 +1,199 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiến thức Dinh dưỡng & Thực phẩm sạch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực phẩm sạch & Dinh dưỡng khoa học</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f7f6;
+      color: #2c3e50;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:#f5f7f6;
-  display:flex;
-  justify-content:center;
-}
-.container{
-  max-width:480px;
-  width:100%;
-  padding:20px;
-}
-header{
-  text-align:center;
-  margin-bottom:20px;
-}
-header img{
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  object-fit:cover;
-}
-h1{
-  font-size:20px;
-  margin:10px 0 4px;
-}
-.subtitle{
-  font-size:13px;
-  color:#555;
-}
-.card{
-  background:#fff;
-  border-radius:12px;
-  padding:15px;
-  margin-bottom:14px;
-  box-shadow:0 4px 12px rgba(0,0,0,.06);
-  cursor:pointer;
-}
-.card h3{
-  margin:0;
-  font-size:16px;
-}
-.card p{
-  font-size:13px;
-  color:#666;
-}
-.detail{
-  display:none;
-  background:#fff;
-  border-radius:12px;
-  padding:16px;
-  margin-bottom:20px;
-}
-.detail img{
-  width:100%;
-  border-radius:10px;
-  margin:10px 0;
-}
-.detail h2{
-  font-size:18px;
-}
-.detail p{
-  font-size:14px;
-  line-height:1.6;
-}
-.source{
-  font-size:12px;
-  color:#374151;
-  background:#ecfdf5;
-  padding:10px;
-  border-radius:8px;
-}
-.back{
-  font-size:13px;
-  color:#16a34a;
-  cursor:pointer;
-  margin-bottom:10px;
-}
-</style>
+    .container {
+      max-width: 480px;
+      margin: auto;
+      padding: 30px 20px;
+    }
 
-<script>
-function showDetail(id){
-  document.querySelectorAll('.detail').forEach(d=>d.style.display='none');
-  document.querySelectorAll('.list').forEach(l=>l.style.display='none');
-  document.getElementById(id).style.display='block';
-}
-function backHome(){
-  document.querySelectorAll('.detail').forEach(d=>d.style.display='none');
-  document.querySelectorAll('.list').forEach(l=>l.style.display='block');
-}
-</script>
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 15px 0 5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+
+    details {
+      background: #ffffff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 15px;
+    }
+
+    summary {
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    details img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+
+    .content {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #34495e;
+    }
+
+    .content h3 {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .source, .download {
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .source a, .download a {
+      color: #27ae60;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #95a5a6;
+    }
+  </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<header>
-  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=200&q=80">
-  <h1>Kiến thức Dinh dưỡng & Thực phẩm sạch</h1>
-  <div class="subtitle">Tổng hợp kiến thức có trích nguồn khoa học</div>
-</header>
-
-<!-- DANH SÁCH CHỦ ĐỀ -->
-<div class="list">
-
-<div class="card" onclick="showDetail('d1')">
-  <h3>🌿 Thực phẩm sạch là gì?</h3>
-  <p>Khái niệm, tiêu chí và ý nghĩa sức khỏe</p>
-</div>
-
-<div class="card" onclick="showDetail('d2')">
-  <h3>🥗 Dinh dưỡng chữa lành</h3>
-  <p>Cơ sở khoa học & nguyên lý dinh dưỡng</p>
-</div>
-
-<div class="card" onclick="showDetail('d3')">
-  <h3>🧬 Vi chất dinh dưỡng quan trọng</h3>
-  <p>Vai trò của vitamin & khoáng chất</p>
-</div>
-
-</div>
-
-<!-- CHI TIẾT 1 -->
-<div class="detail" id="d1">
-  <div class="back" onclick="backHome()">← Quay lại</div>
-  <h2>🌿 Thực phẩm sạch là gì?</h2>
-  <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443">
-  <p>
-    Thực phẩm sạch là thực phẩm được sản xuất và xử lý theo các tiêu chuẩn an toàn,
-    hạn chế tối đa dư lượng hóa chất, vi sinh vật gây hại và đảm bảo giá trị dinh dưỡng.
-  </p>
-  <div class="source">
-    📚 Tài liệu tham khảo:<br>
-    • FAO & WHO – Food Safety Principles<br>
-    • Bộ Y tế Việt Nam – Luật An toàn Thực phẩm
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80">
+    <h1>Thực phẩm sạch & Dinh dưỡng</h1>
+    <div class="subtitle">
+      Tổng hợp kiến thức khoa học • Có trích nguồn • Tài liệu tham khảo
+    </div>
   </div>
-</div>
 
-<!-- CHI TIẾT 2 -->
-<div class="detail" id="d2">
-  <div class="back" onclick="backHome()">← Quay lại</div>
-  <h2>🥗 Dinh dưỡng chữa lành</h2>
-  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
-  <p>
-    Dinh dưỡng chữa lành tập trung vào việc cung cấp thực phẩm toàn phần,
-    cân bằng vi chất, hỗ trợ hệ miễn dịch và giảm tình trạng viêm mạn tính.
-  </p>
-  <div class="source">
-    📚 Nguồn:<br>
-    • Harvard T.H. Chan School of Public Health<br>
-    • National Institutes of Health (NIH)
-  </div>
-</div>
+  <!-- CHUYÊN ĐỀ 1 -->
+  <details>
+    <summary>🌿 Thực phẩm sạch và sức khỏe con người</summary>
 
-<!-- CHI TIẾT 3 -->
-<div class="detail" id="d3">
-  <div class="back" onclick="backHome()">← Quay lại</div>
-  <h2>🧬 Vi chất dinh dưỡng</h2>
-  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267c1">
-  <p>
-    Vitamin và khoáng chất đóng vai trò thiết yếu trong chuyển hóa,
-    miễn dịch và chức năng thần kinh. Thiếu hụt kéo dài có thể gây bệnh lý.
-  </p>
-  <div class="source">
-    📚 Tài liệu:<br>
-    • NIH – Office of Dietary Supplements<br>
-    • EFSA – European Food Safety Authority
+    <img src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=800&q=80">
+
+    <div class="content">
+      <h3>1. Đặt vấn đề</h3>
+      <p>
+        Thực phẩm không an toàn là nguyên nhân hàng đầu gây các bệnh lý đường tiêu hóa,
+        rối loạn chuyển hóa và ung thư. Theo Tổ chức Y tế Thế giới (WHO),
+        đây là một vấn đề y tế toàn cầu chứ không chỉ mang tính cá nhân.
+      </p>
+
+      <h3>2. Số liệu dịch tễ</h3>
+      <ul>
+        <li>~600 triệu ca bệnh/năm do thực phẩm không an toàn</li>
+        <li>~420.000 ca tử vong mỗi năm</li>
+        <li>Trẻ em dưới 5 tuổi chiếm khoảng 30% số ca tử vong</li>
+      </ul>
+
+      <h3>3. Cơ chế sinh học</h3>
+      <p>
+        Thực phẩm nhiễm độc có thể gây stress oxy hóa, tổn thương DNA,
+        rối loạn hệ vi sinh đường ruột và kích hoạt phản ứng viêm mạn tính,
+        từ đó làm tăng nguy cơ mắc các bệnh không lây nhiễm.
+      </p>
+
+      <h3>4. Ý nghĩa thực tiễn</h3>
+      <p>
+        Nhiều nghiên cứu cho thấy chế độ ăn giàu thực phẩm sạch và thực phẩm toàn phần
+        có thể giúp giảm 20–30% nguy cơ mắc bệnh tim mạch, đái tháo đường type 2
+        và một số loại ung thư.
+      </p>
+    </div>
+
+    <div class="source">
+      📚 Tài liệu tham khảo:
+      <ul>
+        <li>
+          WHO. Global burden of foodborne diseases (2015) –
+          <a href="https://pubmed.ncbi.nlm.nih.gov/26633831/" target="_blank">PubMed</a>
+        </li>
+        <li>
+          Aune D. Fruit and vegetable intake and mortality –
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28338764/" target="_blank">PubMed</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="download">
+      📄 Tài liệu học thuật:
+      <a href="docs/tong-quan-thuc-pham-sach.pdf" target="_blank">
+        Tải PDF tổng quan
+      </a>
+    </div>
+  </details>
+
+  <!-- CHUYÊN ĐỀ 2 -->
+  <details>
+    <summary>🧠 Dinh dưỡng và phòng ngừa bệnh mạn tính</summary>
+
+    <img src="https://images.unsplash.com/photo-1506086679525-9b1d0d54e7da?auto=format&fit=crop&w=800&q=80">
+
+    <div class="content">
+      <p>
+        Các nghiên cứu dịch tễ học quy mô lớn cho thấy chế độ ăn giàu rau xanh,
+        ngũ cốc nguyên hạt và thực phẩm ít chế biến có liên quan chặt chẽ
+        đến việc giảm tỷ lệ tử vong do mọi nguyên nhân.
+      </p>
+
+      <p>
+        Phân tích gộp từ hơn 3 triệu người cho thấy nguy cơ tử vong giảm rõ rệt
+        khi tiêu thụ ≥400g rau quả mỗi ngày.
+      </p>
+    </div>
+
+    <div class="source">
+      📚 Nguồn:
+      <a href="https://pubmed.ncbi.nlm.nih.gov/30696981/" target="_blank">
+        Schwingshackl L. (Meta-analysis) – PubMed
+      </a>
+    </div>
+  </details>
+
+  <div class="footer">
+    © 2025 • Nội dung tổng hợp cho mục đích học tập & tham khảo khoa học
   </div>
-</div>
 
 </div>
 </body>
